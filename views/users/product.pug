@@ -1,0 +1,12 @@
+extends ../layouts/common.pug
+block content
+	a(class="btn btn-danger" href="/users/createproduct") Add product
+	.row
+		each product in products
+			.col-md-4
+				.card(class="mt-4")
+					img(class="card-img-top",src=product.image)
+					.card-body
+						h5(class="card-title")=product.name
+						p(class="card-text")=product.description
+						button(class="btn btn-primary d-block") Add to cart

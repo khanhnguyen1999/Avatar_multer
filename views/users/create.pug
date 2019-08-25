@@ -1,0 +1,17 @@
+extends ../layouts/common.pug
+block content
+    h1(class="text-center") Create Users
+    if errors
+        each error in errors
+            .alert.alert-danger= error
+    form(action="/users/create",method="POST", enctype="multipart/form-data")
+        .form-group
+            label(for="exampleInputEmail1") Name
+            input(type="text",name="name",class="form-control",id="exampleInputEmail1",value=values?values.name:"")
+        .form-group
+            label(for="exampleInputEmail") Phone
+            input(type="text",name="phone",class="form-control",id="exampleInputEmail",value=values?values.phone:"")
+        .form-group
+            label(for="avatar") Avatar
+            input#avatar.form-control-file(name="avatar",type="file")
+        button(class="btn btn-primary") Create

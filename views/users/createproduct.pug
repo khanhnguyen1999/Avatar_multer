@@ -1,0 +1,13 @@
+extends ../layouts/common.pug
+block content
+	form(action="/users/createproduct" method="POST" enctype="multipart/form-data")
+		div(class="form-group")
+			label(for="title") Title
+			input#title(type="text" class="form-control")
+		div(class="form-group")
+			label(for="content") Content
+			input#content(type="text" class="form-control")
+		div(class="form-group")
+			label(for="avatar") Avatar
+			input#avatar(type="file" class="form-control-file")
+		button.btn.btn-danger Create

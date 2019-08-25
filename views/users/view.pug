@@ -1,0 +1,7 @@
+extends ../layouts/common.pug
+block content
+    h1(class="text-center") View User
+    img(src=user.avatar)
+    p(class="p-1 text-secondary text-center mt-5")
+        b(class="mr-1") Name
+        span= user.name
